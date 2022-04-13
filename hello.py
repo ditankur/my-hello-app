@@ -14,7 +14,7 @@ def home():
 @app.route("/submit")
 def submit():
     ratings = rec_system.loc['02deuce'].sort_values(ascending=False)[0:20]
-    return pd.concat([ratings], axis=1).index.values.tolist()
+    return tuple(pd.concat([ratings], axis=1).index.values)
 
 if __name__ == '__main__':
     app.run()
