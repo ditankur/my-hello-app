@@ -1,3 +1,4 @@
+from unicodedata import name
 from flask import Flask,render_template,url_for,request
 import pickle
 import pandas as pd
@@ -21,7 +22,8 @@ def home():
 def submit():
     # ratings = rec_system.loc['02deuce'].sort_values(ascending=False)[0:20]
     # return "#".join(pd.concat([ratings], axis=1).index.values.tolist())
-    return render_template('results.html', name='Ankur')
+    name = request.form['userId']
+    return render_template('results.html', name=name)
 
 if __name__ == '__main__':
     app.run()
