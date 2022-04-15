@@ -1,17 +1,27 @@
+<!DOCTYPE html>
 <html>
+
 <head>
 	<title>Home</title>
 </head>
+
 <body>
 
 	<header>
 		<div class="container">
-		<div id="brandname">
-			Machine Learning App with Flask
+			<h2>Sentiment Based Product Recommendation System</h2>
 		</div>
-		
-	</div>
 	</header>
 
+	<div class="ml-container">
+
+		<form action="{{ url_for('predict')}}" method="POST">
+			<p>Enter the user ID</p>
+			<input type="text" name="userId">
+			<input type="submit" class="btn-info" value="predict">
+		</form>
+
+	</div>
 </body>
+
 </html>
