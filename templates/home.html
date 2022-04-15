@@ -3,25 +3,22 @@
 
 <head>
 	<title>Home</title>
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
 </head>
 
 <body>
 
-	<header>
-		<div class="container">
-			<h2>Sentiment Based Product Recommendation System</h2>
+	<form action="{{ url_for('submit')}}" method="POST">
+		<h1>Sentiment Based Product Recommendation System</h1>
+		<div class="formcontainer">
+			<div class="container">
+				<label for="username"><strong>Username</strong></label>
+				<input type="text" name="userId" placeholder="Enter the name of existing user" required>
+			</div>
+			<button type="submit" class="btn-info"><strong>SUBMIT</strong></button>
 		</div>
-	</header>
+	</form>
 
-	<div class="ml-container">
-
-		<form action="{{ url_for('submit')}}" method="POST">
-			<p>Enter the user ID</p>
-			<input type="text" name="userId">
-			<input type="submit" class="btn-info" value="predict">
-		</form>
-
-	</div>
 </body>
 
 </html>
