@@ -14,7 +14,9 @@
 	</header>
 
 	<div class="ml-container">
-       {{name}}
+		{% for each in products %}
+		{{ each }}
+		{% end for %}
 	</div>
 </body>
 
