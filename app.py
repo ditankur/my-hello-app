@@ -1,6 +1,5 @@
 from flask import Flask,render_template,url_for,request
 import pickle
-import nacl
 import pandas as pd
 
 # Load recommendation system
