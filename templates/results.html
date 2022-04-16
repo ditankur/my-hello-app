@@ -14,9 +14,14 @@
 	</header>
 
 	<div class="ml-container">
-		{% for each in products %}
-			<p>{{ each }}</p>
-		{% endfor %}
+		<table>
+			{% for key, value in products.items() %}
+			<tr>
+				<td>{{key}}</td>
+				<td>{{value}}</td>
+			</tr>
+			{% endfor %}
+		</table>
 	</div>
 </body>
 
