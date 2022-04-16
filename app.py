@@ -22,8 +22,6 @@ def home():
 
 @app.route('/predict', methods=['POST'])
 def submit():
-    # ratings = rec_system.loc['02deuce'].sort_values(ascending=False)[0:20]
-    # return "#".join(pd.concat([ratings], axis=1).index.values.tolist())
     user_name = request.form['username']
     recommended_products = get_recommended_products(user_name)
     return render_template('results.html', products=recommended_products)
